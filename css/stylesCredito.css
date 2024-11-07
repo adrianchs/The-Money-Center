@@ -1,0 +1,295 @@
+body {
+    background-image: url('../img/imagen2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vW;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+    margin-top: 150px; /* Ajusta este valor al alto de tu header */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%; /* Asegura que el header ocupe todo el ancho de la página */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos de la página */
+    background-color: #ffffff;
+    color: rgb(255, 255, 255);
+    
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    border-radius: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    display: relative;
+    margin-left:  30px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #0077ff;
+
+}
+
+nav ul li ul.submenu {
+    display: none;
+    position: absolute;
+    top: auto; /* Coloca el submenú justo debajo del padre */
+    left: 100;
+    background-color: #0077ff;
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1000; /* Asegura que el submenú esté por encima de otros elementos */
+}
+
+nav ul li ul.submenu li {
+    margin: 0;
+}
+
+/* Submenu item hover effect */
+nav ul li ul.submenu li a {
+    white-space: nowrap;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+nav ul li ul.submenu li a:hover {
+    background-color: #003366;
+    color: white;
+}
+
+/* Show submenu on hover */
+nav ul li.productos-servicios:hover ul.submenu,
+nav ul li ul.submenu:hover {
+    display: block;
+}
+
+nav ul li.solicitud-credito a {
+    display:inline-block;
+    background-color: #0077ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Animación al hacer hover en el botón */
+nav ul li.solicitud-credito a:hover {
+    background-color: #003366; /* Cambia el color de fondo */
+    transform: scale(1.04); /* Aumenta ligeramente el tamaño */
+}
+/* Fondo de la sección del formulario */
+.form-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #0077ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,  1);
+    text-align: center;
+}
+
+/* Títulos y subtítulos */
+.form-container h2 {
+    color: #0077ff;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.form-container h2 span {
+    color: #ff0000;
+}
+
+hr.separador-cont {
+    border-top: 3px solid #ff0000;
+}
+
+.form-container p { 
+    font-size: 14px;
+    color: #0077ff;
+    margin: 5px 0 15px;
+    
+}
+
+.form-container p span {
+    font-weight: bold;
+
+}
+/* Estilos de los campos de entrada */
+.form-container label {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-container select {
+    appearance: none;
+}
+
+/* Estilo del botón de envío */
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button {
+    transition: all .2s ease-out;
+    
+}
+
+.form-container button:hover {
+    background-color: #cd0000f6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,  .3);
+}
+
+/* Estilo para los términos y el reCAPTCHA */
+.captcha, .terms {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.captcha input, .terms input {
+    margin-right: 10px;
+}
+
+.credit-section {
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 10px;
+    border: 3px solid #0077ff;
+    padding: 20px;
+    text-align: left;
+    background-color: #fff;
+}
+.credit-section h1 {
+    color: #0077ff; /* Color de título principal */
+    text-align: center;
+    margin-bottom: 10px;  
+}
+
+hr.separador {
+    border-top: 5px solid #ff0000;
+    width: 550px;
+}
+
+.credit-section h2 {
+    color: #0077ff; /* Color del subtítulo */
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+    margin: 20px;
+}
+
+.credit-section strong {
+    color: #005cc6;
+}
+
+.sub-text {
+    text-align: center;
+    font-size: 14px;
+    color: #0077ff; /* Color del texto pequeño debajo */
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.credit-info{
+    font-size: 12px;
+    text-align: justify;
+    margin: 60px;
+}
+
+.credit-info p {
+    margin: 15px 0;
+}
+
+.credit-info strong {
+    color: #333; /* Color para destacar las etiquetas */
+}
+
+.credit-info a {
+    color: #0056a4; /* Color de los enlaces */
+    text-decoration: none;
+}
+
+.credit-info a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #004085;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

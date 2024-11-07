@@ -1,0 +1,370 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+    margin-top: 150px; /* Ajusta este valor al alto de tu header */
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%; /* Asegura que el header ocupe todo el ancho de la página */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos de la página */
+    background-color: #ffffff;
+    color: rgb(255, 255, 255);
+    
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+/* Logo */
+.logo img {
+    width: 100px;
+    height: auto;
+    border-radius: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    display: relative;
+    margin-left:  30px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+
+nav ul li a:hover {
+    color: #0077ff;
+
+}
+
+/* Estilos del botón de Solicitud de Crédito */
+nav ul li.solicitud-credito a {
+    display:inline-block;
+    background-color: #0077ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Animación al hacer hover en el botón */
+nav ul li.solicitud-credito a:hover {
+    background-color: #003366; /* Cambia el color de fondo */
+    transform: scale(1.04); /* Aumenta ligeramente el tamaño */
+}
+
+
+/* Estilo para el contenedor del carrusel */
+.carrusel-imagenes {
+    width: 100%;
+    max-width: 1000px; /* Ancho máximo del carrusel */
+    height: 350px; /* Altura personalizada del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+/* Estilo para las imágenes del carrusel */
+.carrusel-contenido {
+    display: flex;
+    width: 100%; /* Necesario para contener las imágenes alineadas horizontalmente */
+    height: 100%; /* Asegura que el contenedor ocupe todo el alto del carrusel */
+    animation: slide 7s infinite; /* Animación para deslizar las imágenes */
+}
+
+.carrusel-marco {
+    min-width: 100%; /* Cada imagen toma todo el ancho del contenedor */
+    min-height: 100%; /* Las imágenes también deben ocupar todo el alto */
+    transition: transform 0.5s ease;
+}
+
+.carrusel-marco img {
+    width: 100%;
+    height: 100%; /* Hace que las imágenes ocupen todo el alto */
+    object-fit: cover; /* Asegura que las imágenes cubran el área sin deformarse */
+    border-radius: 10px;
+}
+
+/* Animación para deslizar las imágenes de una a otra */
+@keyframes slide {
+    0%, 33% {
+        transform: translateX(0);
+    }
+    50%, 85% {
+        transform: translateX(-100%);
+    }
+    85%, 100% {
+        transform: translateX(-200%);
+    }
+}
+
+/* Sections */
+h1, h2 {
+    color: #003366;
+}
+
+/* Estilos generales para la sección de productos */
+#productos {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+#productos h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.productos-contenido {
+    display: flex;
+    justify-content: space-around; /* Espaciado entre los productos */
+    flex-wrap: wrap; /* Asegura que los productos se adapten en pantallas pequeñas */
+    margin: 0 auto;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+}
+
+.producto {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%; /* Cada div ocupa un 30% del ancho */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.producto h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Animación en hover para cada producto */
+.producto:hover {
+    transform: translateY(-10px); /* Eleva ligeramente el producto */
+}
+
+/* Estilos para el botón "Saber más" */
+.btn-saber-mas {
+    display: inline-block;
+    background-color: #0077ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Animación en hover para el botón "Saber más" */
+.btn-saber-mas:hover {
+    background-color: #003366; /* Cambia el color de fondo */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+/* Estilos generales para la sección de requisitos */
+#requisitos {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f0f0f0; /* Color de fondo suave para diferenciar */
+}
+
+#requisitos h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de los requisitos */
+.requisitos-contenido {
+    display: flex;
+    justify-content: space-around; /* Espaciado entre los requisitos */
+    flex-wrap: wrap; /* Permite que los requisitos se ajusten en pantallas pequeñas */
+    margin: 0 auto;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+}
+
+.requisito {
+    padding: 10px;
+    width: 30%; /* Cada div ocupa un 30% del ancho */
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin: 5px; /* Espaciado entre requisitos */
+}
+
+.requisito img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.requisito h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.requisito p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+
+/*Mi sucursal seccion*/
+.sucursal {
+    background-color: #0077ff;
+    padding: 50px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.sucursal h1, p {
+    color: #ffffff;
+}
+
+.btn-sucursal {
+    display: inline-block;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-sucursal:hover {
+    background-color: #003366; /* Cambia el color de fondo */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    color: #ffffff;
+}
+
+
+/* Estilos generales para la sección de publicidad */
+#publicidad {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f7f7f7;
+}
+
+#publicidad h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de empresas */
+.publicidad-contenido {
+    display:flex;
+    justify-content:space-around; 
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Estilos para cada empresa */
+.empresa {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 10px;
+}
+
+.empresa img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.empresa h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.empresa p {
+    font-size: 1em;
+    color: #666;
+}
+
+
+/* Sección de noticias */
+.noticias-contenido {
+    margin-top: 50px;
+}
+
+.noticias-contenido h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.noticia {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    margin: 10px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.noticia h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.noticia p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+footer {
+    background-color: #004085;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

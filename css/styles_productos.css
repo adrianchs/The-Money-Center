@@ -1,0 +1,360 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    margin-top: 150px; /* Ajusta este valor al alto de tu header */
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%; /* Asegura que el header ocupe todo el ancho de la página */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos de la página */
+    background-color: #ffffff;
+    color: rgb(255, 255, 255);
+    
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+/* Logo */
+.logo img {
+    width: 100px;
+    height: auto;
+    border-radius: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    display: relative;
+    margin-left:  30px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+
+nav ul li a:hover {
+    color: #0077ff;
+
+}
+
+/* Estilos del botón de Solicitud de Crédito */
+nav ul li.solicitud-credito a {
+    display:inline-block;
+    background-color: #0077ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Animación al hacer hover en el botón */
+nav ul li.solicitud-credito a:hover {
+    background-color: #003366; /* Cambia el color de fondo */
+    transform: scale(1.04); /* Aumenta ligeramente el tamaño */
+}
+
+/* Sección de Productos con Pestañas */
+.productos-tab {
+    width: 80%;
+    margin: auto;
+    padding: 30px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.productos-tab h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #004085;
+    margin-bottom: 20px;
+}
+
+/* Panel de pestañas en la parte superior */
+.tab-menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #004085;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.tab-link {
+    flex: 1;
+    padding: 15px;
+    background-color: #004085;
+    font-size: 18px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.tab-link.active {
+    background-color: #0056b3;
+}
+
+.tab-link:hover {
+    background-color: #0056b3;
+}
+
+/* Contenedor del contenido debajo de las pestañas */
+.tab-container {
+    border-top: 2px solid #004085;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+}
+
+.tab-content {
+    display: flex;
+    align-items: center;
+}
+
+.product-info {
+    display: none;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.product-info.active {
+    display: flex;
+}
+
+.product-image img {
+    max-width: 550px;
+    border-radius: 10px;
+}
+
+.product-description h3 {
+    font-size: 24px;
+    color: #004085;
+}
+
+.product-description, .producto-item, .accordion-content, .credito, .requisito p, h4 {
+    font-size: 16px;
+    color: #00124e;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #004085;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Main Section */
+h1 {
+    font-size: 32px;
+    text-align: center;
+    color: #004085;
+    margin-top: 40px;
+}
+
+.productos {
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.producto-item {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.producto-item h2 {
+    font-size: 24px;
+    color: #004085;
+}
+
+
+.producto-item a {
+    color: #004085;
+    text-decoration: underline;
+}
+
+.producto-item a:hover {
+    color: #0056b3;
+}
+
+/* Sección ¿Por qué contratarnos? */
+.why-choose-us {
+    width: 50%;
+    margin: auto;
+    padding: 40px 0;
+    background-color: #f7f7f7;
+}
+
+.why-choose-us h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #004085;
+    margin-bottom: 20px;
+}
+
+.accordion-container {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    background-color: #004085;
+    color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.accordion-header:hover {
+    background-color: #0056b3;
+}
+
+.accordion-content {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 0 0 10px 10px;
+    margin-top: -10px;
+}
+
+
+
+/*seccion de requisitos*/
+.credito {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f9fc;
+
+}
+
+.credito h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #004085;
+    margin-bottom: 20px;
+}
+
+
+
+.requisitos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.requisito {
+    text-align: center;
+    max-width: 200px;
+}
+
+.icono {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.icono img {
+    width: 80px;
+    height: 80px;
+    background-color: #0056b3;
+    border-radius: 50%;
+    padding: 60px;
+}
+
+.icono .numero {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #13c200;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.requisito h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+.boton-credito {
+    display:inline-block;
+    background-color: #0077ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-credito:hover {
+    background-color: #003366; /* Cambia el color de fondo */
+    transform: scale(1.04); /* Aumenta ligeramente el tamaño */
+}
+
+/* Footer */
+footer {
+    background-color: #004085;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
