@@ -9,21 +9,30 @@
 <body>
     <header>
         <div class="header-container">
+            <!-- Logo -->
             <div class="logo">
                 <a href="../index.html"><img src="../img/logo2.jpg" alt="Logo Financiera Marín"></a>
             </div>
-        <nav>
-            <ul>
-                <li class="productos-servicios">
-                    <a href="productos.html">Productos y Servicios</a>
-                </li>
-                <li><a href="Sucursales.html">Sucursales</a></li>
-                <li class="solicitud-credito">
+            <!-- Ícono de menú hamburguesa para pantallas pequeñas -->
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <!-- Menú de navegación -->
+            <nav>
+                <ul class="menu">
+                    <li><a href="productos.html">Productos y Servicios</a></li>
+                    <li><a href="sucursales.html">Sucursales</a></li>
+                    <li class="solicitud-credito">
                     <a href="SolicitarCredito.html">Solicitar Crédito</a>
-                </li>                
-            </ul>
-        </nav>
+                    </li>
+                </ul>
+            </nav>
+            
+        </div>
     </header>
+    <script>
+      function toggleMenu() {
+        document.querySelector('.menu').classList.toggle('active');
+      }
+    </script>
 
     <div class="form-background">
     <div class="form-container">
