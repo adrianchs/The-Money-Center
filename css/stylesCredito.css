@@ -13,14 +13,13 @@ body {
     margin-top: 150px; /* Ajusta este valor al alto de tu header */
 }
 
+/* Header */
 header {
     position: fixed;
     top: 0;
-    width: 100%; /* Asegura que el header ocupe todo el ancho de la página */
-    z-index: 1000; /* Asegura que el header esté por encima de otros elementos de la página */
+    width: 100%;
+    z-index: 1000;
     background-color: #ffffff;
-    color: rgb(255, 255, 255);
-    
 }
 
 .header-container {
@@ -30,26 +29,27 @@ header {
     padding: 5px;
 }
 
+/* Logo */
 .logo img {
     width: 100px;
     height: auto;
     border-radius: 100%;
 }
 
-nav ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
+/* Estilo de los elementos del menú */
 nav ul li {
-    display: relative;
-    margin-left:  30px;
+    margin-left: 30px;
 }
 
 nav ul li a {
-    color: #333;
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -57,44 +57,9 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #0077ff;
-
 }
 
-nav ul li ul.submenu {
-    display: none;
-    position: absolute;
-    top: auto; /* Coloca el submenú justo debajo del padre */
-    left: 100;
-    background-color: #0077ff;
-    padding: 10px;
-    border-radius: 4px;
-    z-index: 1000; /* Asegura que el submenú esté por encima de otros elementos */
-}
-
-nav ul li ul.submenu li {
-    margin: 0;
-}
-
-/* Submenu item hover effect */
-nav ul li ul.submenu li a {
-    white-space: nowrap;
-    padding: 10px;
-    display: block;
-    transition: background-color 0.3s ease;
-    color: white;
-}
-
-nav ul li ul.submenu li a:hover {
-    background-color: #003366;
-    color: white;
-}
-
-/* Show submenu on hover */
-nav ul li.productos-servicios:hover ul.submenu,
-nav ul li ul.submenu:hover {
-    display: block;
-}
-
+/* Estilos del botón de Solicitud de Crédito */
 nav ul li.solicitud-credito a {
     display:inline-block;
     background-color: #0077ff;
@@ -111,6 +76,50 @@ nav ul li.solicitud-credito a:hover {
     background-color: #003366; /* Cambia el color de fondo */
     transform: scale(1.04); /* Aumenta ligeramente el tamaño */
 }
+
+/* Estilos del menú hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsividad - Pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ocultar el menú y mostrar el ícono hamburguesa */
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: #ffffff;
+        width: 150px;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el ícono de menú hamburguesa */
+    }
+
+    /* Mostrar el menú cuando se hace clic en el ícono */
+    .menu.active {
+        display: flex;
+    }
+
+    /* Estilo para los enlaces del menú en pantallas pequeñas */
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Ocultar elementos adicionales del menú en el estilo hamburguesa */
+    .solicitud-credito {
+        display: inline-block; /* El botón de Solicitar Crédito permanece visible */
+    }
+}
+
 /* Fondo de la sección del formulario */
 .form-background {
     display: flex;
