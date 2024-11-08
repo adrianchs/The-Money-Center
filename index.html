@@ -22,27 +22,29 @@
 <body>
     <header>
         <div class="header-container">
+            <!-- Logo -->
             <div class="logo">
                 <a href="index.html"><img src="img/logo2.jpg" alt="Logo Financiera Marín"></a>
             </div>
-        <nav>
-             <div class="menu-toggle" onclick="toggleMenu()">☰</div> <!-- Ícono del menú sandwich -->
-            <ul>
-                <li class="productos-servicios">
-                    <a href="html/productos.html">Productos y Servicios</a>
-                </li>
-                <li><a href="html/sucursales.html">Sucursales</a></li>
-                <li class="solicitud-credito">
+            <!-- Ícono de menú hamburguesa para pantallas pequeñas -->
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            
+            <!-- Menú de navegación -->
+            <nav>
+                <ul class="menu">
+                    <li><a href="html/productos.html">Productos y Servicios</a></li>
+                    <li><a href="html/sucursales.html">Sucursales</a></li>
+                    <li class="solicitud-credito">
                     <a href="html/SolicitarCredito.html">Solicitar Crédito</a>
-                </li>                
-            </ul>
-        </nav>
+                    </li>
+                </ul>
+            </nav>
+            
+        </div>
     </header>
-    <script>
-        function toggleMenu() {
-          document.querySelector('.menu').classList.toggle('active');
-        }
-    </script>
+    
+
+
     <!--<section class="hero">
         <h1>Bienvenido a Financiera Marín</h1>
     <p>Soluciones financieras a tu medida.</p> 
@@ -165,5 +167,12 @@
     <footer>
         <p>© 2024 Financiera Marín - Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('active');
+        }
+
+    </script>
 </body>
 </html>
