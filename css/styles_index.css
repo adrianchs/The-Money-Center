@@ -58,6 +58,31 @@ nav ul li a:hover {
 
 }
 
+/* Menú responsivo */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Pantallas pequeñas (tablets y móviles) */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: block; /* Mostrar el ícono sandwich */
+  }
+
+  /* Mostrar el menú al hacer clic en el botón sandwich */
+  .menu.active {
+    display: flex;
+  }
+}
+
 /* Estilos del botón de Solicitud de Crédito */
 nav ul li.solicitud-credito a {
     display:inline-block;
