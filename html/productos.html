@@ -19,7 +19,7 @@
             <nav>
                 <ul class="menu">
                     <li><a href="productos.html">Productos y Servicios</a></li>
-                    <li><a href="Sucursales.html">Sucursales</a></li>
+                    <li><a href="sucursales.html">Sucursales</a></li>
                     <li class="solicitud-credito">
                     <a href="SolicitarCredito.html">Solicitar Crédito</a>
                     </li>
@@ -29,10 +29,23 @@
         </div>
     </header>
     <script>
-      function toggleMenu() {
-        document.querySelector('.menu').classList.toggle('active');
-      }
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            const menuToggle = document.querySelector('.menu-toggle');
+    
+            menu.classList.toggle('active');
+            
+            // Cambia el ícono de hamburguesa a "X" y viceversa
+            if (menu.classList.contains('active')) {
+                menuToggle.textContent = '✖'; // Cambia a "X" cuando el menú está abierto
+            } else {
+                menuToggle.textContent = '☰'; // Cambia a hamburguesa cuando el menú está cerrado
+            }
+        }
     </script>
+    
+    
+    
 
     <section class="productos-tab">
         <h2>Nuestros Productos Destacados</h2>
@@ -53,7 +66,7 @@
                     <div class="product-description">
                         <h3>Préstamos Personales</h3>
                         <p>Ofrecemos préstamos personales con tasas accesibles, plazos flexibles y aprobación rápida. Perfecto para tus necesidades financieras.</p>
-                        <a href="SolicitarCredito.html" class="btn">Conoce más</a>
+                        <a href="SolicitarCredito.html" class="btn">Solicitar préstamo</a>
                     </div>
                 </div>
     
@@ -66,7 +79,7 @@
                         <h4>La pensión es un derecho que tienen por ley los trabajadores que han cumplido 60 años o más, en el cual obtienen un monto mensual garantizado de forma vitalicia.</h4>
                         <p>Actualmente existen dos modalidades de pensión para quienes cotizan en el Instituto Mexicano del Seguro Social: bajo la ley del 73 y bajo la ley del 97.</p>
                         <p>Si estás por cumplir 60 años es importante identificar si eres candidato para pensionarte de acuerdo a la ley de 1973 para iniciar tu trámite y hacerlo con el mayor monto posible.</p></p>
-                        <a href="SolicitarCredito.html" class="btn">Conoce más</a>
+                        <a href="SolicitarCredito.html" class="btn">Saber más</a>
                     </div>
                 </div>
     
@@ -78,13 +91,14 @@
                         <h3>¿Cómo funciona?</h3>
                         <p>La Continuación Voluntaria al Régimen Obligatorio, también conocida como Modalidad 40 IMSS, es un derecho y beneficio que por ley tienen los trabajadores que comenzaron a cotizar en el IMSS antes del 1° de julio de 1997.</p>
                         <p>Consiste en realizar aportaciones voluntarias que sólo se pueden hacer si el trabajador dejó de cotizar con un patrón, así puedes mejorar el promedio salarial, sumar semanas y, por ende, obtener un monto mejorado de pensión con total apego a la ley.</p>
-                        <a href="SolicitarCredito.html" class="btn">Conoce más</a>
+                        <a href="SolicitarCredito.html" class="btn">Saber más</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+        <!-- Aquí se incluye el script JavaScript -->
     <script>
         function openProduct(evt, productName) {
             var i, tabContent, tabLinks;
