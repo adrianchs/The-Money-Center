@@ -28,12 +28,11 @@
             </div>
             <!-- Ícono de menú hamburguesa para pantallas pequeñas -->
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            
             <!-- Menú de navegación -->
             <nav>
                 <ul class="menu">
                     <li><a href="html/productos.html">Productos y Servicios</a></li>
-                    <li><a href="html/Sucursales.html">Sucursales</a></li>
+                    <li><a href="html/sucursales.html">Sucursales</a></li>
                     <li class="solicitud-credito">
                     <a href="html/SolicitarCredito.html">Solicitar Crédito</a>
                     </li>
@@ -42,22 +41,38 @@
             
         </div>
     </header>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            const menuToggle = document.querySelector('.menu-toggle');
     
-    <div class="carrusel-imagenes">
-        <div class="carrusel-contenido">
-            <div class="carrusel-marco">
-                    <img src="img/imagen7.jpeg" alt="Imagen 1">
-                </a>
-            </div>
-            <div class="carrusel-marco">
-                <img src="img/DALL·E 2024-09-19 13.42.28 - A professional and sleek banner for 'The Money Center' brand. The banner should feature elements related to finance, such as currency symbols, bank no.webp" alt="Imagen 2">
-            </div>
-            <div class="carrusel-marco">
-                <img src="img/imagen6.jpeg" alt="Imagen 3">
+            menu.classList.toggle('active');
+            
+            // Cambia el ícono de hamburguesa a "X" y viceversa
+            if (menu.classList.contains('active')) {
+                menuToggle.textContent = '✖'; // Cambia a "X" cuando el menú está abierto
+            } else {
+                menuToggle.textContent = '☰'; // Cambia a hamburguesa cuando el menú está cerrado
+            }
+        }
+    </script>
+
+    <section class="carrusel">
+        <div class="carrusel-imagenes">
+            <div class="carrusel-contenido">
+                <div class="carrusel-marco">
+                    <img src="img/imagen3.jpeg" alt="Imagen 1">
+                </div>
+                <div class="carrusel-marco">
+                    <img src="img/imagen7.jpeg" alt="Imagen 2">
+                </div>
+                <div class="carrusel-marco">
+                    <img src="img/imagen6.jpeg" alt="Imagen 3">
+                </div>
             </div>
         </div>
-    </div>
-
+    </section>
+        
     <section id="productos">
         <h2>Nuestros Productos</h2>
         <div class="productos-contenido">
@@ -114,7 +129,7 @@
         <h1>Obtén tu crédito hoy mismo, acude a tu sucursal</h1>
         <p>También puedes obtener tu crédito llamado al: 55 5555 5555</p>
         <div>
-            <a href="html/Sucursales.html" class="btn-sucursal">📌 Buscar mi sucursal</a>
+            <a href="html/sucursales.html" class="btn-sucursal">📌 Buscar mi sucursal</a>
         </div>
     </section>
 
@@ -161,11 +176,6 @@
         <p>© 2024 Financiera Marín - Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.querySelector('.menu').classList.toggle('active');
-        }
 
-    </script>
 </body>
 </html>
