@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #f7f7f7;
     color: #333;
     margin-top: 150px; /* Ajusta este valor al alto de tu header */
 }
@@ -26,7 +26,7 @@ header {
 
 /* Logo */
 .logo img {
-    width: 100px;
+    width: 80px;
     height: auto;
     border-radius: 100%;
 }
@@ -47,6 +47,7 @@ nav ul li a {
     color: #000000;
     text-decoration: none;
     font-weight: bold;
+
     transition: color 0.3s ease;
 }
 
@@ -71,50 +72,66 @@ nav ul li.solicitud-credito a:hover {
     background-color: #003366; /* Cambia el color de fondo */
     transform: scale(1.04); /* Aumenta ligeramente el tamaño */
 }
-
-/* Estilos del menú hamburguesa */
+/* Estilos para el ícono de hamburguesa */
 .menu-toggle {
     display: none;
     font-size: 24px;
     cursor: pointer;
+    background-color: #0077ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
-/* Responsividad - Pantallas pequeñas */
+.menu-toggle:hover {
+    background-color: #003366;
+    transform: scale(1.04);
+}
+/* Mostrar el ícono de menú en pantallas pequeñas */
 @media (max-width: 768px) {
-    /* Ocultar el menú y mostrar el ícono hamburguesa */
-    .menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        background-color: #ffffff;
-        width: 150px;
-        padding: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        border-radius: 8px;
-    }
-
     .menu-toggle {
-        display: block; /* Mostrar el ícono de menú hamburguesa */
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 20px;
+        z-index: 1001; /* Asegura que esté encima del menú */
     }
 
-    /* Mostrar el menú cuando se hace clic en el ícono */
+    .menu {
+        display: none; /* Ocultar menú inicialmente */
+        flex-direction: column;
+        align-items: center; /* Centrar opciones horizontalmente */
+        text-align: center; /* Centrar el texto de las opciones */
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+        background-color: #ffffff;
+        padding-top: 100px;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+    .menu li {
+        margin: 15px 0;
+    }
+    
+
     .menu.active {
         display: flex;
-    }
-
-    /* Estilo para los enlaces del menú en pantallas pequeñas */
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    /* Ocultar elementos adicionales del menú en el estilo hamburguesa */
-    .solicitud-credito {
-        display: inline-block; /* El botón de Solicitar Crédito permanece visible */
+        transform: translateX(0);
     }
 }
 
+.carrusel{
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+    margin-top: 100px; /* Alinea el carrusel debajo del encabezado */
+}
 
 /* Estilo para el contenedor del carrusel */
 .carrusel-imagenes {
@@ -153,7 +170,7 @@ nav ul li.solicitud-credito a:hover {
     0%, 33% {
         transform: translateX(0);
     }
-    50%, 85% {
+    60%, 85% {
         transform: translateX(-100%);
     }
     85%, 100% {
@@ -229,6 +246,7 @@ h1, h2 {
     font-weight: bold;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Animación en hover para el botón "Saber más" */
@@ -331,8 +349,9 @@ h1, h2 {
 .publicidad-contenido {
     display:flex;
     justify-content:space-around; 
+    flex-wrap: wrap;
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 1200px;
 }
 
 /* Estilos para cada empresa */
@@ -340,10 +359,11 @@ h1, h2 {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 100%;
+    width: 25%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 10px;
+    margin: 15px;
+    transition: transform 0.3s ease;
 }
 
 .empresa img {
@@ -394,6 +414,14 @@ h1, h2 {
     font-size: 1em;
     margin-bottom: 10px;
     color: #666;
+}
+
+/* Ajuste responsivo para dispositivos pequeños */
+@media (max-width: 768px) {
+    .producto, .requisito, .empresa {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+        margin: 20px 50px; /* Espaciado superior e inferior para separación */
+    }
 }
 
 footer {
