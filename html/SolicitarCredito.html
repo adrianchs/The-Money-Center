@@ -19,7 +19,7 @@
             <nav>
                 <ul class="menu">
                     <li><a href="productos.html">Productos y Servicios</a></li>
-                    <li><a href="Sucursales.html">Sucursales</a></li>
+                    <li><a href="sucursales.html">Sucursales</a></li>
                     <li class="solicitud-credito">
                     <a href="SolicitarCredito.html">Solicitar Crédito</a>
                     </li>
@@ -29,9 +29,19 @@
         </div>
     </header>
     <script>
-      function toggleMenu() {
-        document.querySelector('.menu').classList.toggle('active');
-      }
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            const menuToggle = document.querySelector('.menu-toggle');
+    
+            menu.classList.toggle('active');
+            
+            // Cambia el ícono de hamburguesa a "X" y viceversa
+            if (menu.classList.contains('active')) {
+                menuToggle.textContent = '✖'; // Cambia a "X" cuando el menú está abierto
+            } else {
+                menuToggle.textContent = '☰'; // Cambia a hamburguesa cuando el menú está cerrado
+            }
+        }
     </script>
 
     <div class="form-background">
