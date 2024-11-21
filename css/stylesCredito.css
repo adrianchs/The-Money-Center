@@ -20,6 +20,7 @@ header {
     width: 100%;
     z-index: 1000;
     background-color: #ffffff;
+    border-bottom: 2px solid #0077ff; /* Línea azul debajo del header */
 }
 
 .header-container {
