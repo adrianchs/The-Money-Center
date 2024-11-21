@@ -72,6 +72,57 @@
             </div>
         </div>
     </section>
+
+    <section id="info-empresa">
+        <h1>¿Quiénes Somos?</h1>
+        <div class="info-container">
+            <!-- Columna izquierda: Imagen -->
+            <div class="info-image">
+                <img src="img/imagen3.jpeg" alt="Imagen de la Empresa">
+            </div>
+            <!-- Columna derecha: Pestañas -->
+            <div class="info-tabs">
+                <div class="tab" onclick="toggleTab(this)">
+                    <h3>Historia</h3>
+                    <div class="tab-content">
+                        <p>Somos una empresa con el objetivo de brindar soluciones confiables y personalizadas para la administración de pensiones y ahorro. Bajo la marca comercial The Money Center, la empresa comenzó a ofrecer servicios como pensiones, Afores y la Modalidad 40.</p>
+                    </div>
+                </div>
+                <div class="tab" onclick="toggleTab(this)">
+                    <h3>Misión</h3>
+                    <div class="tab-content">
+                        <p>Nuestra misión es ofrecer soluciones financieras confiables y accesibles que ayuden a nuestros clientes a asegurar su futuro económico. Buscamos mejorar la calidad de vida de las familias mexicanas mediante productos como pensiones, Afores y administración de nómina, apoyándonos en alianzas estratégicas y un firme compromiso con el servicio al cliente.</p>
+                    </div>
+                </div>
+                <div class="tab" onclick="toggleTab(this)">
+                    <h3>Visión</h3>
+                    <div class="tab-content">
+                        <p>Nuestra visión es ser reconocidos como el principal socio financiero para los trabajadores, distinguiéndonos por la confianza, la calidad y la innovación en nuestras soluciones. Queremos expandir nuestra presencia a nivel nacional y continuar aportando al bienestar económico de nuestros clientes, a la vez que fortalecemos el crecimiento del sector financiero en México.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <script>
+       function toggleTab(tabElement) {
+    const tabs = document.querySelectorAll('.tab');
+    
+    tabs.forEach(tab => {
+        if (tab === tabElement) {
+            tab.classList.toggle('active');
+        } else {
+            tab.classList.remove('active');
+        }
+    });
+}
+
+
+    </script>
+    
+    
         
     <section id="productos">
         <h2>Nuestros Productos</h2>
@@ -140,7 +191,7 @@
             <!-- Empresa 1 -->
             <div class="empresa">
                 <a href="https://www.banorte.com" target="_blank">
-                    <img src="img/banorte.webp" alt="Empresa 2">
+                    <img src="img/banorte.webp" alt="Empresa 1">
                 </a>
                 <h3>Banorte</h3>
                 <p>Banorte ofrece soluciones de seguros que complementan los servicios financieros de The Money Center.</p>
@@ -148,10 +199,22 @@
             <!-- Empresa 2 -->
             <div class="empresa">
                 <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwicysiHgMuJAxWlNtQBHSkfK5kYABAAGgJvYQ&co=1&ase=2&gclid=Cj0KCQiA57G5BhDUARIsACgCYnxj22f_y3kJpOI39Uj2Q6YZPGFcMKpUMhNtlI2Omr1-cPzXXWDu0rAaAsGMEALw_wcB&ohost=www.google.com&cid=CAESV-D2Z6KodNnPZYRT0bH71kYEyYsx3qlMwkL8d_tAPEV1qzMv8O-i-GqdiI1HBXapU9_OURcE0arQCFcHyP07pyPJ2Q1i6EYObUqsy-irXHm-eAa0-wjDiQ&sig=AOD64_2_M45M7aeiIy6pVtkgeh58r22TJA&q&nis=4&adurl&ved=2ahUKEwjK08OHgMuJAxUPHNAFHbmKKNUQ0Qx6BAgKEAE" target="_blank">
-                    <img src="img/consubanco.png" alt="Empresa 1">
+                    <img src="img/consubanco.png" alt="Empresa 2">
                 </a>
                 <h3>Consubanco</h3>
                 <p>Consubanco somos una empresa perteneciente a GRUPO CONSUPAGO con más de 15 años de experiencia, que brinda servicio de excelencia, seguridad y transparencia a los mexicanos que quieran lograr sus objetivos y mejorar su calidad de vida; cuidando así el bienestar económico de nuestros clientes.</p>
+            </div>
+            <!-- Empresa 3 -->
+            <div class="empresa">
+                <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.masnomina.com.mx%2F&psig=AOvVaw0wVCGEix0nfY9u1o26UuDY&ust=1732309236903000&source=images&cd=vfe&opi=89978449&ved=0CAQQn5wMahcKEwiYvKG_qe6JAxUAAAAAHQAAAAAQBA" target="_blank">
+                    <img src="img/MasNomina.png" alt="Empresa 1">
+                </a>
+                <h3>Más Nómina</h3>
+                <p>Somos una empresa 100% mexicana, constituida en el 2010 como FISOFO, S.A. de C.V., SOFOM, E.R. (Más Nómina). 
+
+                    Durante la trayectoria de la empresa, nos hemos caracterizado por la especialización en el otorgamiento de créditos personales con descuento vía nómina a trabajadores del sector público y privado.
+                    
+                    Actualmente contamos con presencia en todo el País.</p>
             </div>
         </div>
     
