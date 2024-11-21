@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     color: #333;
     margin-top: 150px; /* Ajusta este valor al alto de tu header */
 }
@@ -15,6 +15,7 @@ header {
     width: 100%;
     z-index: 1000;
     background-color: #ffffff;
+    border-bottom: 2px solid #0077ff; /* Línea azul debajo del header */
 }
 
 .header-container {
@@ -178,6 +179,129 @@ nav ul li.solicitud-credito a:hover {
     }
 }
 
+/* Estilos generales */
+#info-empresa {
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+}
+
+#info-empresa h1 {
+    font-size: 5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    opacity: 0.2;
+    color: #004085;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Contenedor principal */
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Columna izquierda: Imagen */
+.info-image {
+    flex: 1;
+    max-width: 45%;
+    text-align: center;
+    margin: 0 50px;
+}
+
+.info-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Columna derecha: Pestañas */
+.info-tabs {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Pestañas individuales */
+.tab {
+    background: transparent;
+    border: 2px solid #004085;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    color: #004085;
+}
+
+.tab h3 {
+    margin: 0;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenido de la pestaña */
+.tab-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #e4e4e493;
+    border-radius: 0px;
+    margin-top: 15px;
+    padding: 0 15px;
+    font-size: 1em;
+    text-align: justify;
+    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.tab-content p {
+    margin: 10px;
+    color:#000000;
+}
+
+/* Contenido visible */
+.tab.active .tab-content {
+    max-height: 300px;
+    padding: 15px;
+    opacity: 1;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #info-empresa h1 {
+        font-size: 3.5em;
+    }
+
+    .info-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .info-image {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    .info-tabs {
+        max-width: 100%;
+    }
+
+    .tab {
+        width: auto;
+    }
+}
+
+
+
 /* Sections */
 h1, h2 {
     color: #003366;
@@ -193,6 +317,7 @@ h1, h2 {
 #productos h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .productos-contenido {
@@ -259,12 +384,13 @@ h1, h2 {
 #requisitos {
     text-align: center;
     padding: 50px 0;
-    background-color: #f0f0f0; /* Color de fondo suave para diferenciar */
+    
 }
 
 #requisitos h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Contenedor de los requisitos */
