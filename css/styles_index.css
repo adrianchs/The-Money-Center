@@ -18,7 +18,7 @@ header {
     border-bottom: 2px solid #0077ff; /* Línea azul debajo del header */
 }
 
-.header-container {
+.contenedor-menu {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -30,6 +30,10 @@ header {
     width: 80px;
     height: auto;
     border-radius: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.logo img:hover {
+    transform: scale(0.9);
 }
 
 ul {
@@ -45,10 +49,10 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #000000;
+    color: #161515;
+    font-size:  14px;
     text-decoration: none;
     font-weight: bold;
-
     transition: color 0.3s ease;
 }
 
@@ -74,24 +78,25 @@ nav ul li.solicitud-credito a:hover {
     transform: scale(1.04); /* Aumenta ligeramente el tamaño */
 }
 /* Estilos para el ícono de hamburguesa */
-.menu-toggle {
+.menu-hamb {
     display: none;
     font-size: 24px;
     cursor: pointer;
-    background-color: #0077ff;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
+    background-color: transparent;
+    color: #0077ff;
+    padding: 15px 25px;  
+    border-radius: 100px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-.menu-toggle:hover {
-    background-color: #003366;
-    transform: scale(1.04);
+.menu-hamb:hover {
+    background-color: #004085;
+    transform: scale(0.8);
+    color:#ffffff;
 }
-/* Mostrar el ícono de menú en pantallas pequeñas */
+/* Mostrar el ícono de menú hamburguesa en pantallas pequeñas */
 @media (max-width: 768px) {
-    .menu-toggle {
+    .menu-hamb {
         display: block;
         position: fixed;
         top: 15px;
@@ -188,17 +193,17 @@ nav ul li.solicitud-credito a:hover {
 }
 
 #info-empresa h1 {
-    font-size: 5em;
+    font-size: 4.5em;
     margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    opacity: 0.2;
+    text-shadow: 10px 8px 6px rgba(0, 0, 0, 0.6);
+    opacity: 0.5;
     color: #004085;
     text-transform: uppercase;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Contenedor principal */
-.info-container {
+.info-contenedor {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -206,23 +211,53 @@ nav ul li.solicitud-credito a:hover {
     gap: 20px;
 }
 
-/* Columna izquierda: Imagen */
-.info-image {
+/* Carrusel de imágenes */
+.info-carrusel {
     flex: 1;
-    max-width: 45%;
-    text-align: center;
-    margin: 0 50px;
-}
-
-.info-image img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
     border-radius: 5px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+.info-imagenes {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 350px;
+    margin: 20px 0px;
+}
+
+.info-imagenes img {
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Puntos de control */
+.puntos-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.punto {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.punto.active {
+    background: #004085;
+}
+
 /* Columna derecha: Pestañas */
-.info-tabs {
+.info-pestaña {
     flex: 1;
     max-width: 50%;
     display: flex;
@@ -231,26 +266,32 @@ nav ul li.solicitud-credito a:hover {
 }
 
 /* Pestañas individuales */
-.tab {
+.pestaña {
     background: transparent;
     border: 2px solid #004085;
     border-radius: 5px;
     padding: 15px;
     cursor: pointer;
+    opacity: 0.5;
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
     color: #004085;
 }
+.pestaña:hover {
+    opacity: 1;
 
-.tab h3 {
+}
+.pestaña h3 {
     margin: 0;
     font-size: 1.5em;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
+
+
 /* Contenido de la pestaña */
-.tab-content {
+.content-pestaña {
     max-height: 0;
     overflow: hidden;
     background: #e4e4e493;
@@ -263,13 +304,13 @@ nav ul li.solicitud-credito a:hover {
     opacity: 0;
 }
 
-.tab-content p {
+.content-pestaña p {
     margin: 10px;
     color:#000000;
 }
 
 /* Contenido visible */
-.tab.active .tab-content {
+.pestaña.active .content-pestaña {
     max-height: 300px;
     padding: 15px;
     opacity: 1;
@@ -278,24 +319,24 @@ nav ul li.solicitud-credito a:hover {
 /* Responsivo */
 @media (max-width: 768px) {
     #info-empresa h1 {
-        font-size: 3.5em;
+        font-size: 3em;
     }
 
-    .info-container {
+    .info-contenedor {
         flex-direction: column;
         gap: 30px;
     }
 
-    .info-image {
+    .info-carrusel {
         max-width: 100%;
         margin: 0 10px;
     }
 
-    .info-tabs {
+    .info-pestaña {
         max-width: 100%;
     }
 
-    .tab {
+    .pestaña {
         width: auto;
     }
 }
@@ -315,7 +356,7 @@ h1, h2 {
 }
 
 #productos h2 {
-    font-size: 2.5em;
+    font-size: 3em;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -388,7 +429,7 @@ h1, h2 {
 }
 
 #requisitos h2 {
-    font-size: 2.5em;
+    font-size: 3em;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
