@@ -21,13 +21,13 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
+        <div class="contenedor-menu">
             <!-- Logo -->
             <div class="logo">
                 <a href="index.html"><img src="img/logo2.jpg" alt="Logo Financiera Marín"></a>
             </div>
             <!-- Ícono de menú hamburguesa para pantallas pequeñas -->
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <div class="menu-hamb" onclick="hamburguesa()">☰</div>
             <!-- Menú de navegación -->
             <nav>
                 <ul class="menu">
@@ -41,18 +41,19 @@
             
         </div>
     </header>
+    <!--script para menu hamburguesa-->
     <script>
-        function toggleMenu() {
+        function hamburguesa() {
             const menu = document.querySelector('.menu');
-            const menuToggle = document.querySelector('.menu-toggle');
+            const menuHamb = document.querySelector('.menu-hamb');
     
             menu.classList.toggle('active');
             
             // Cambia el ícono de hamburguesa a "X" y viceversa
             if (menu.classList.contains('active')) {
-                menuToggle.textContent = '✖'; // Cambia a "X" cuando el menú está abierto
+                menuHamb.textContent = '✖'; // Cambia a "X" cuando el menú está abierto
             } else {
-                menuToggle.textContent = '☰'; // Cambia a hamburguesa cuando el menú está cerrado
+                menuHamb.textContent = '☰'; // Cambia a hamburguesa cuando el menú está cerrado
             }
         }
     </script>
@@ -72,31 +73,42 @@
             </div>
         </div>
     </section>
-
+    
     <section id="info-empresa">
         <h1>¿Quiénes Somos?</h1>
-        <div class="info-container">
-            <!-- Columna izquierda: Imagen -->
-            <div class="info-image">
-                <img src="img/imagen3.jpeg" alt="Imagen de la Empresa">
+        <div class="info-contenedor">
+            <!-- Columna izquierda: Carrusel de imágenes -->
+            <div class="info-carrusel">
+                <div class="info-imagenes">
+                    <img src="img/imagen3.jpeg" alt="Imagen 1">
+                    <img src="img/imagen2.jpeg" alt="Imagen 2">
+                    <img src="img/imagen7.jpeg" alt="Imagen 3">
+                    <img src="img/imagen5.jpeg" alt="Imagen 4">
+                </div>
+                <div class="puntos-nav">
+                    <span class="punto" onclick="showSlide(0)"></span>
+                    <span class="punto" onclick="showSlide(1)"></span>
+                    <span class="punto" onclick="showSlide(2)"></span>
+                    <span class="punto" onclick="showSlide(3)"></span>
+                </div>
             </div>
             <!-- Columna derecha: Pestañas -->
-            <div class="info-tabs">
-                <div class="tab" onclick="toggleTab(this)">
+            <div class="info-pestaña">
+                <div class="pestaña" onclick="toggleTab(this)">
                     <h3>Historia</h3>
-                    <div class="tab-content">
+                    <div class="content-pestaña">
                         <p>Somos una empresa con el objetivo de brindar soluciones confiables y personalizadas para la administración de pensiones y ahorro. Bajo la marca comercial The Money Center, la empresa comenzó a ofrecer servicios como pensiones, Afores y la Modalidad 40.</p>
                     </div>
                 </div>
-                <div class="tab" onclick="toggleTab(this)">
+                <div class="pestaña" onclick="toggleTab(this)">
                     <h3>Misión</h3>
-                    <div class="tab-content">
+                    <div class="content-pestaña">
                         <p>Nuestra misión es ofrecer soluciones financieras confiables y accesibles que ayuden a nuestros clientes a asegurar su futuro económico. Buscamos mejorar la calidad de vida de las familias mexicanas mediante productos como pensiones, Afores y administración de nómina, apoyándonos en alianzas estratégicas y un firme compromiso con el servicio al cliente.</p>
                     </div>
                 </div>
-                <div class="tab" onclick="toggleTab(this)">
+                <div class="pestaña" onclick="toggleTab(this)">
                     <h3>Visión</h3>
-                    <div class="tab-content">
+                    <div class="content-pestaña">
                         <p>Nuestra visión es ser reconocidos como el principal socio financiero para los trabajadores, distinguiéndonos por la confianza, la calidad y la innovación en nuestras soluciones. Queremos expandir nuestra presencia a nivel nacional y continuar aportando al bienestar económico de nuestros clientes, a la vez que fortalecemos el crecimiento del sector financiero en México.</p>
                     </div>
                 </div>
@@ -104,25 +116,48 @@
         </div>
     </section>
     
-    
-    
     <script>
-       function toggleTab(tabElement) {
-    const tabs = document.querySelectorAll('.tab');
-    
-    tabs.forEach(tab => {
-        if (tab === tabElement) {
-            tab.classList.toggle('active');
-        } else {
-            tab.classList.remove('active');
+        // funcion para las pestañas
+        function toggleTab(tabElement) {
+            const ptñs = document.querySelectorAll('.pestaña');
+            
+            ptñs.forEach(tab => {
+                if (tab === tabElement) {
+                    tab.classList.toggle('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });  
         }
-    });
-}
 
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.info-imagenes img');
+        const punt = document.querySelectorAll('.punto');
+
+        function showSlide(index) {
+            const totalSlides = slides.length;
+            currentSlide = index;
+
+            // Cambiar la posición del carrusel
+            const carrusel = document.querySelector('.info-imagenes');
+            carrusel.style.transform = `translateX(-${index * 100}%)`;
+
+            // Actualizar los puntos activos
+            punt.forEach((punto, i) => {
+                punto.classList.toggle('active', i === index);
+            });
+        }
+
+        // Cambiar de imagen automáticamente cada 10 segundos
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 4000);
+
+        // Inicializar el carrusel
+        showSlide(0);
 
     </script>
-    
-    
         
     <section id="productos">
         <h2>Nuestros Productos</h2>
@@ -186,7 +221,7 @@
 
 
     <section id="publicidad">
-        <h2>Empresas Vinculadas con The Money Center</h2>
+        <h2>Convenios con The Money Center</h2>
         <div class="publicidad-contenido">
             <!-- Empresa 1 -->
             <div class="empresa">
