@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home | The Money Center</title>
+    <link rel="stylesheet" href="css/styles_index.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor-menu">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html"><img src="img/logo2.jpg" alt="Logo Financiera Marín"></a>
+            </div>
+            <!-- Ícono de menú hamburguesa para pantallas pequeñas -->
+            <div class="menu-hamb" onclick="hamburguesa()">☰</div>
+            <!-- Menú de navegación -->
+            <nav>
+                <ul class="menu">
+                    <li><a href="html/productos.html">Productos y Servicios</a></li>
+                    <li><a href="html/sucursales.html">Sucursales</a></li>
+                    <li class="solicitud-credito">
+                    <a href="html/SolicitarCredito.html">Solicitar Crédito</a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+    <!--script para menu hamburguesa-->
+    <script>
+        function hamburguesa() {
+            const menu = document.querySelector('.menu');
+            const menuHamb = document.querySelector('.menu-hamb');
+    
+            menu.classList.toggle('active');
+            
+            // Cambia el ícono de hamburguesa a "X" y viceversa
+            if (menu.classList.contains('active')) {
+                menuHamb.textContent = '✖'; // Cambia a "X" cuando el menú está abierto
+            } else {
+                menuHamb.textContent = '☰'; // Cambia a hamburguesa cuando el menú está cerrado
+            }
+        }
+    </script>
+
+    <section class="carrusel">
+        <div class="carrusel-imagenes">
+            <div class="carrusel-contenido">
+                <div class="carrusel-marco">
+                    <img src="img/imagen3.jpeg" alt="Imagen 1">
+                </div>
+                <div class="carrusel-marco">
+                    <img src="img/imagen7.jpeg" alt="Imagen 2">
+                </div>
+                <div class="carrusel-marco">
+                    <img src="img/imagen6.jpeg" alt="Imagen 3">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="info-empresa">
+        <h1>¿Quiénes Somos?</h1>
+        <div class="info-contenedor">
+            <!-- Columna izquierda: Carrusel de imágenes -->
+            <div class="info-carrusel">
+                <div class="info-imagenes">
+                    <img src="img/imagen3.jpeg" alt="Imagen 1">
+                    <img src="img/imagen2.jpeg" alt="Imagen 2">
+                    <img src="img/imagen7.jpeg" alt="Imagen 3">
+                    <img src="img/imagen5.jpeg" alt="Imagen 4">
+                </div>
+                <div class="puntos-nav">
+                    <span class="punto" onclick="showSlide(0)"></span>
+                    <span class="punto" onclick="showSlide(1)"></span>
+                    <span class="punto" onclick="showSlide(2)"></span>
+                    <span class="punto" onclick="showSlide(3)"></span>
+                </div>
+            </div>
+            <!-- Columna derecha: Pestañas -->
+            <div class="info-pestaña">
+                <div class="pestaña" onclick="toggleTab(this)">
+                    <h3>Historia</h3>
+                    <div class="content-pestaña">
+                        <p>Somos una empresa con el objetivo de brindar soluciones confiables y personalizadas para la administración de pensiones y ahorro. Bajo la marca comercial The Money Center, la empresa comenzó a ofrecer servicios como pensiones, Afores y la Modalidad 40.</p>
+                    </div>
+                </div>
+                <div class="pestaña" onclick="toggleTab(this)">
+                    <h3>Misión</h3>
+                    <div class="content-pestaña">
+                        <p>Nuestra misión es ofrecer soluciones financieras confiables y accesibles que ayuden a nuestros clientes a asegurar su futuro económico. Buscamos mejorar la calidad de vida de las familias mexicanas mediante productos como pensiones, Afores y administración de nómina, apoyándonos en alianzas estratégicas y un firme compromiso con el servicio al cliente.</p>
+                    </div>
+                </div>
+                <div class="pestaña" onclick="toggleTab(this)">
+                    <h3>Visión</h3>
+                    <div class="content-pestaña">
+                        <p>Nuestra visión es ser reconocidos como el principal socio financiero para los trabajadores, distinguiéndonos por la confianza, la calidad y la innovación en nuestras soluciones. Queremos expandir nuestra presencia a nivel nacional y continuar aportando al bienestar económico de nuestros clientes, a la vez que fortalecemos el crecimiento del sector financiero en México.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // funcion para las pestañas
+        function toggleTab(tabElement) {
+            const ptñs = document.querySelectorAll('.pestaña');
+            
+            ptñs.forEach(tab => {
+                if (tab === tabElement) {
+                    tab.classList.toggle('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });  
+        }
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.info-imagenes img');
+        const punt = document.querySelectorAll('.punto');
+
+        function showSlide(index) {
+            const totalSlides = slides.length;
+            currentSlide = index;
+
+            // Cambiar la posición del carrusel
+            const carrusel = document.querySelector('.info-imagenes');
+            carrusel.style.transform = `translateX(-${index * 100}%)`;
+
+            // Actualizar los puntos activos
+            punt.forEach((punto, i) => {
+                punto.classList.toggle('active', i === index);
+            });
+        }
+
+        // Cambiar de imagen automáticamente cada 10 segundos
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 4000);
+
+        // Inicializar el carrusel
+        showSlide(0);
+
+    </script>
+        
+    <section id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="productos-contenido">
+            <!-- Producto 1 -->
+            <div class="producto">
+                <img src="img/préstamos.jpeg" alt="Préstamos">
+                <h3>Préstamos</h3>
+                <p>¡Cumple tus metas con nuestros préstamos accesibles!</p>
+                <p>Ya sea para un proyecto personal, inversión o imprevisto, te ofrecemos tasas competitivas, plazos flexibles y asesoría personalizada.</p></p>
+                <a href="html/productos.html" class="btn-saber-mas">Saber más</a>
+            </div>
+            <!-- Producto 2 -->
+            <div class="producto">
+                <img src="img/pensiones.jpg" alt="Pensiones">
+                <h3>Pensiones</h3>
+                <p>Asegura tu futuro con nuestros planes de pensiones adaptados a tus necesidades.</p>
+                <a href="html/productos.html" class="btn-saber-mas">Saber más</a>
+            </div>
+            <!-- Producto 3 -->
+            <div class="producto">
+                <img src="img/mod40.jpg" alt="Modalidad 40">
+                <h3>Modalidad 40</h3>
+                <p>Si eres candidato y planeas pensionarte bajo la Ley del Seguro Social 1973, es importante que conozcas la Modalidad 40 IMSS y cómo te puede ayudar a aumentar tu pensión hasta en un 300% más.</p>
+                <a href="html/productos.html" class="btn-saber-mas">Saber más</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="requisitos">
+        <h2>Requisitos para Solicitar un Crédito</h2>           
+        <div class="requisitos-contenido">
+            <!-- Requisito 1 -->
+            <div class="requisito">
+                <img src="img/documentacion.jpg" alt="Documentación">
+                <h3>Identificación oficial</h3>
+                <p>INE y/o pasaporte vigentes.</p>
+            </div>
+            <!-- Requisito 2 -->
+            <div class="requisito">
+                <img src="img/historial-crediticio.webp" alt="Historial Crediticio">
+                <h3>Recibos de nómina</h3>
+                <p>Ten a la mano tus últimos 2 recibos de nómina o informes de pago (en caso de ser Pensionado).</p>
+            </div>
+            <!-- Requisito 3 -->
+            <div class="requisito">
+                <img src="img/formulario.webp" alt="Formulario de Solicitud">
+                <h3>Contáctanos</h3>
+                <p>Llámanos o envíanos un WhatsApp al: 55 8951 1124</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="sucursal">
+        <h1>Obtén tu crédito hoy mismo, acude a tu sucursal</h1>
+        <p>También puedes obtener tu crédito llamado al: 55 8951 1124</p>
+        <div>
+            <a href="html/sucursales.html" class="btn-sucursal">📌 Buscar mi sucursal</a>
+        </div>
+    </section>
+
+
+    <section id="publicidad">
+        <h2>Convenios con The Money Center</h2>
+        <div class="publicidad-contenido">
+            <!-- Empresa 1 -->
+            <div class="empresa">
+                <a href="https://www.banorte.com" target="_blank">
+                    <img src="img/banorte.webp" alt="Empresa 1">
+                </a>
+                <h3>Banorte</h3>
+                <p>Banorte ofrece soluciones de seguros que complementan los servicios financieros de The Money Center.</p>
+            </div>
+            <!-- Empresa 2 -->
+            <div class="empresa">
+                <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwicysiHgMuJAxWlNtQBHSkfK5kYABAAGgJvYQ&co=1&ase=2&gclid=Cj0KCQiA57G5BhDUARIsACgCYnxj22f_y3kJpOI39Uj2Q6YZPGFcMKpUMhNtlI2Omr1-cPzXXWDu0rAaAsGMEALw_wcB&ohost=www.google.com&cid=CAESV-D2Z6KodNnPZYRT0bH71kYEyYsx3qlMwkL8d_tAPEV1qzMv8O-i-GqdiI1HBXapU9_OURcE0arQCFcHyP07pyPJ2Q1i6EYObUqsy-irXHm-eAa0-wjDiQ&sig=AOD64_2_M45M7aeiIy6pVtkgeh58r22TJA&q&nis=4&adurl&ved=2ahUKEwjK08OHgMuJAxUPHNAFHbmKKNUQ0Qx6BAgKEAE" target="_blank">
+                    <img src="img/consubanco.png" alt="Empresa 2">
+                </a>
+                <h3>Consubanco</h3>
+                <p>Consubanco somos una empresa perteneciente a GRUPO CONSUPAGO con más de 15 años de experiencia, que brinda servicio de excelencia, seguridad y transparencia a los mexicanos que quieran lograr sus objetivos y mejorar su calidad de vida; cuidando así el bienestar económico de nuestros clientes.</p>
+            </div>
+            <!-- Empresa 3 -->
+            <div class="empresa">
+                <a href="https://www.masnomina.com.mx/" target="_blank">
+                    <img src="img/MasNomina.png" alt="Empresa 1">
+                </a>
+                <h3>Más Nómina</h3>
+                <p>Somos una empresa 100% mexicana, constituida en el 2010 como FISOFO, S.A. de C.V., SOFOM, E.R. (Más Nómina). 
+
+                    Durante la trayectoria de la empresa, nos hemos caracterizado por la especialización en el otorgamiento de créditos personales con descuento vía nómina a trabajadores del sector público y privado.
+                    
+                    Actualmente contamos con presencia en todo el País.</p>
+            </div>
+        </div>
+    
+        <!-- Sección de Noticias -->
+        <div class="noticias-contenido">
+            <h2>Noticias Recientes</h2>
+            <article class="noticia">
+                <h3>Nueva Colaboración con Empresa 4</h3>
+                <p>The Money Center ha anunciado una nueva colaboración con Empresa 4 para expandir sus servicios.</p>
+                <a href="#" class="btn-saber-mas">Leer más</a>
+            </article>
+            <article class="noticia">
+                <h3>Lanzamiento de Nuevos Productos Financieros</h3>
+                <p>Descubre los nuevos productos que The Money Center ha lanzado en colaboración con sus socios.</p>
+                <a href="#" class="btn-saber-mas">Leer más</a>
+            </article>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>© 2024 Grupo The Money Center - Todos los derechos reservados.</p>
+    </footer>
+
+
+</body>
+</html>
