@@ -18,7 +18,7 @@ header("Pragma: no-cache");
 
 // Verificar que se recibió el formulario mediante POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require 'db_connection.php';
+    #require 'db_connection.php';
     // Obtener los datos del formulario
     $nombre = htmlspecialchars($_POST['nombre']);
     $apellidos = htmlspecialchars($_POST['apellidos']);
@@ -94,6 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
             // Guardar a la DB
+            /*
             $stmt = $pdo->prepare("INSERT INTO solicitudes_credito (nombre, apellidos, email, telefono, dependencia) VALUES (:nombre, :apellidos, :email, :telefono, :dependencia)");
             $stmt->execute([
                 ':nombre' => $nombre,
@@ -102,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ':telefono' => $telefono,
                 ':dependencia' => $dependencia
             ]);
-
+            */
             // Cierra la sesión
             session_destroy();
 
